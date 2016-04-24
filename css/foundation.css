@@ -89,28 +89,53 @@ a {
    * Improve readability of focused elements when they are also in an
    * active/hover state.
    */
+
+#body{
+  background-image: url('http://www.zingerbug.com/Backgrounds/background_images/recycling_arrows_small.jpg');
+}
+
+#checkboxInput{
+  float: center;
+}
+
 #datTitleDoe{
   font-size: 40px;
   font-family: georgia;
+  margin-top: 100px;
+  text-shadow: 2px 2px black;
 }
 
 a:active,
 a:hover {
   outline: 0; }
 
+#navMenu{
+  float: left;
+}
+
 .navBar{
   display: inline;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 6px;
-  box-shadow: 2px 2px 1px black;
+  box-shadow: 1px 1px 0.5px black;
+  opacity: ;
+  background-color: white;
+
+
 
 } 
 header{
-  margin-top: 20px;
+  margin-top: ;
   font-size: 20px;
   padding-top: ;
-  padding-bottom: 2px;
+  padding-right: 10px;
   font-family: georgia;
+  position: fixed;
+  z-index: 10;
+  background-color: #def0fc;
+  width: 400px;
+
 }
 #headingColor{
   background-image: url("https://www.newlineanglia.co.uk/files/images/environment.jpg");
@@ -121,6 +146,23 @@ header{
 .dailyChallenge{
   font-family: georgia;
   font-size: 25px;
+}
+.challengeBenefits{
+  display: none;
+}
+
+.challengeBenefits.show{
+  display: block;
+  border: 2px ridge black;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: white;
+}
+#insetBorder{
+  border: 1px inset;
+}
+#primaryjane{
+box-shadow: 0.5px 0.5px 0.25px black;
 }
 
 /* Text-level semantics
@@ -1263,7 +1305,8 @@ h2 {
   font-size: 1.25rem; }
 
 h3 {
-  font-size: 1.1875rem; }
+  font-size: 1.1875rem; 
+  text-align: center; }
 
 h4 {
   font-size: 1.125rem; }
@@ -2034,7 +2077,8 @@ select {
   .callout.primary {
     background-color: #def0fc;
     text-align: center;
-    font-size: 18px; }
+    font-size: 18px; 
+    border-radius: 5px; }
   .callout.secondary {
     background-color: #ebebeb; }
   .callout.success {
