@@ -28,9 +28,15 @@
     		var randomChallenge = Math.floor(Math.random()*things.length);
     		
     		challengeElement = document.createElement('p');
+    		benefitElement = document.createElement('p');
     		challengeElement.className = 'dailyChallenge';
+    		benefitElement.className = 'challengeBenefits';
     		challengeElement.innerHTML = things[randomChallenge].dailyChallenge;
+    		benefitElement.innerHTML = things[randomChallenge].benefits;
     		containerElement.appendChild(challengeElement);
+    		containerElement.appendChild(benefitElement); 
+
+
     		
     		return;
     	
@@ -38,44 +44,46 @@
     }
     viewChallenge(challenges);
 
-    /*var challengeBenefits = document.getElementById('todaysChallenge');
+    var challengeBenefits = document.getElementById('todaysChallenge');
     challengeBenefits.addEventListener('click', showBenefits);
 
     function showBenefits(event){
-    	var showMeDaMoney = this.querySelectorAll('.dailyChallenge')[0];
-        if(showBody.classList.contains('show') === false){
-            return showBody.classList.add('show');
+    	var showMeDaMoney = this.querySelectorAll('.challengeBenefits')[0];
+        if(showMeDaMoney.classList.contains('show') === false){
+            return showMeDaMoney.classList.add('show');
         }else{
-            return showBody.classList.remove('show');
+            return showMeDaMoney.classList.remove('show');
         } //closes if else statement
     } //this closes the showMessage function
-    }*/
+    
 
 };
     </script>
   </head>
-  <body>
-  	<header>	
+  <body id="body">
+	<div>
+	  	<header>		
 
-		<a href="#" id="logo"></a>	
+			<a href="#" id="logo"></a>		
 
-		<nav>	
+			<nav>		
 
-		<a href="#" id="menu-icon"></a>	
+			<a href="#" id="menu-icon"></a>		
 
-			<ul>		
+				<ul id="navMenu">			
 
-				<li class="navBar"><a href="#" class="current">Home</a></li>
-				<li class="navBar"><a href="#">Map</a></li>
-				<li class="navBar"><a href="#">Album</a></li>
-				<li class="navBar"><a href="#">Rewards</a></li>
-					
+					<li class="navBar"><a href="#" class="current">Home</a></li>
+					<li class="navBar"><a href="#">Map</a></li>
+					<li class="navBar"><a href="#">Album</a></li>
+					<li class="navBar"><a href="#">Rewards</a></li>
+							
 
-			</ul>	
+				</ul>		
 
-		</nav>	
+			</nav>		
 
-	</header>
+		</header>
+	</div>
     <div class="row" id="headingColor">
       <div class="large-12 columns">
         <h1 id="datTitleDoe"><strong>D</strong>aily <strong>E</strong>nvironmental <strong>C</strong>hallenge</h1>
@@ -85,7 +93,7 @@
 
         <div class="row">
           <div class="large-12 columns">
-            <div class="primary callout">
+            <div class="primary callout" id="primaryjane">
               <div id="todaysChallenge"></div>
             </div>
             
@@ -95,12 +103,14 @@
         <div class="row">
           <div class="large-4 medium-4 small-4 columns">
             <div class="primary callout">
-              <p id="numCompleted">7,396 on DEC</p>
+              <img src="https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/checked_checkbox.png">
+              <p id="numCompleted">7,396</p>
             </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
             <div class="primary callout">
-              <p id="">Four columns</p>
+              <img src="https://cdn3.iconfinder.com/data/icons/line-icons-medium-version/64/photo-camera-512.png" alt="">
+              
             </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
@@ -109,12 +119,12 @@
             </div>
           </div>
         </div>
-            <hr />
 
     <div class="row">
       <div class="large-12 columns">
-        <div class="callout">
+        <div class="callout" id="insetBorder">
           <h3>Are you on DEC??</h3>
+          <hr />
           <p>We wanted to help create a simple task that people can do to help the environment. We are committed to working locally to improve the social, economical and environmental well being of our community. If we all complete these easy "daily challenges", we can help create and maintain a positive environmental impact.</p>
           
           <div class="row">
@@ -122,7 +132,7 @@
               <p><a href="http://www.earthday.org/">Earth Day Network</a><br />Earth Day Network’s mission is to broaden and diversify the environmental movement worldwide and to mobilize it as the most effective vehicle to build a healthy, sustainable environment, address climate change, and protect the Earth for future generations.</p>
             </div>
             <div class="large-4 medium-4 columns">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
+              <p><a href="https://ypte.org.uk/factsheets/environment/pollution">Young People's Trust for the Environment</a><br />Originally founded in 1982, the Young People's Trust for the Environment is a charity which aims to encourage young people's understanding of the environment and of the need for sustainability.</p>
             </div>
             <div class="large-4 medium-4 columns">
               <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowlege.</p>
@@ -147,6 +157,14 @@
               <textarea placeholder="enter your brilliant ideas here"></textarea>
             </div>
           </div>
+          <div class="large-6 medium-6 columns">
+              <label><strong>[</strong>1 - Easy <strong>][</strong> 2 - So-So <strong>][</strong> 3 - More difficult<strong>]</strong></label>
+              	  <div id="checkboxInput">	  
+              	  	  <input id="checkbox1" type="checkbox"><label for="checkbox1">1</label>
+	  	              <input id="checkbox2" type="checkbox"><label for="checkbox2">2</label>
+	  	              <input id="checkbox3" type="checkbox"><label for="checkbox3">3</label>
+	  	          </div>
+            </div>
           <input type="button" onclick="myFunction()" value="Submit form">
     </form>
 
@@ -236,8 +254,6 @@ function myFunction() {
           <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>
         </div>
       </div>
-    </div>
-
-    
+    </div>-->
   </body>
-</html> -->
+</html> 
