@@ -89,9 +89,39 @@ a {
    * Improve readability of focused elements when they are also in an
    * active/hover state.
    */
+#datTitleDoe{
+  font-size: 40px;
+  font-family: georgia;
+}
+
 a:active,
 a:hover {
   outline: 0; }
+
+.navBar{
+  display: inline;
+  border: 1px solid black;
+  padding: 6px;
+  box-shadow: 2px 2px 1px black;
+
+} 
+header{
+  margin-top: 20px;
+  font-size: 20px;
+  padding-top: ;
+  padding-bottom: 2px;
+  font-family: georgia;
+}
+#headingColor{
+  background-image: url("https://www.newlineanglia.co.uk/files/images/environment.jpg");
+  margin-bottom: 10px;
+  color: white;
+}
+
+.dailyChallenge{
+  font-family: georgia;
+  font-size: 25px;
+}
 
 /* Text-level semantics
      ========================================================================== */
@@ -1495,7 +1525,6 @@ kbd {
       background-color: #5f5f5f;
       color: #fefefe; }
   .button.success {
-    text-align: center;
     background-color: #3adb76;
     color: #fefefe; }
     .button.success:hover, .button.success:focus {
@@ -2003,7 +2032,9 @@ select {
   .callout > :last-child {
     margin-bottom: 0; }
   .callout.primary {
-    background-color: #def0fc; }
+    background-color: #def0fc;
+    text-align: center;
+    font-size: 18px; }
   .callout.secondary {
     background-color: #ebebeb; }
   .callout.success {
