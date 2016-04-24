@@ -7,71 +7,119 @@
     <title>DEC</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
-    <script type="text/javascript">
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+    	window.onload = function(){
+
+    	var containerElement = document.createElement('div');
+        var mainElement = document.getElementById('todaysChallenge');
+            containerElement.id = 'challengesGoHere';
+        mainElement.appendChild(containerElement);
+        
+        console.log(mainElement);
+
+    	function viewChallenge(things){
+    	for (var i = 0; i < things.length; i++) {
+    		//console.log(things[i].dailyChallenge);
+    		
+    		var randomChallenge = Math.floor(Math.random()*things.length);
+    		
+    		challengeElement = document.createElement('p');
+    		challengeElement.className = 'dailyChallenge';
+    		challengeElement.innerHTML = things[randomChallenge].dailyChallenge;
+    		containerElement.appendChild(challengeElement);
+    		
+    		return;
     	
+    	}
+    }
+    viewChallenge(challenges);
+
+    /*var challengeBenefits = document.getElementById('todaysChallenge');
+    challengeBenefits.addEventListener('click', showBenefits);
+
+    function showBenefits(event){
+    	var showMeDaMoney = this.querySelectorAll('.dailyChallenge')[0];
+        if(showBody.classList.contains('show') === false){
+            return showBody.classList.add('show');
+        }else{
+            return showBody.classList.remove('show');
+        } //closes if else statement
+    } //this closes the showMessage function
+    }*/
+
+};
     </script>
   </head>
   <body>
-    <div class="row">
+  	<header>	
+
+		<a href="#" id="logo"></a>	
+
+		<nav>	
+
+		<a href="#" id="menu-icon"></a>	
+
+			<ul>		
+
+				<li class="navBar"><a href="#" class="current">Home</a></li>
+				<li class="navBar"><a href="#">Map</a></li>
+				<li class="navBar"><a href="#">Album</a></li>
+				<li class="navBar"><a href="#">Rewards</a></li>
+					
+
+			</ul>	
+
+		</nav>	
+
+	</header>
+    <div class="row" id="headingColor">
       <div class="large-12 columns">
-        <h1>Daily Environmental Challenge</h1>
+        <h1 id="datTitleDoe"><strong>D</strong>aily <strong>E</strong>nvironmental <strong>C</strong>hallenge</h1>
+
       </div>
     </div>
 
         <div class="row">
           <div class="large-12 columns">
             <div class="primary callout">
-              <p id="todaysChallenge"></p>
+              <div id="todaysChallenge"></div>
             </div>
-            <a href="#" class="success button">Benefits</a>
-            <hr />
+            
 
           </div>
         </div>
         <div class="row">
           <div class="large-4 medium-4 small-4 columns">
             <div class="primary callout">
-              <p>Four columns</p>
+              <p id="numCompleted">7,396 on DEC</p>
             </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
             <div class="primary callout">
-              <p>Four columns</p>
+              <p id="">Four columns</p>
             </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
             <div class="primary callout">
-              <p>Four columns</p>
+              <p id="currentStreak">Streak: 4</p>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="primary callout">
-              <p>Four columns</p>
-            </div>
-          </div>
-        </div>
+            <hr />
 
     <div class="row">
       <div class="large-12 columns">
         <div class="callout">
           <h3>Are you on DEC??</h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
+          <p>We wanted to help create a simple task that people can do to help the environment. We are committed to working locally to improve the social, economical and environmental well being of our community. If we all complete these easy "daily challenges", we can help create and maintain a positive environmental impact.</p>
+          
           <div class="row">
             <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
+              <p><a href="http://www.earthday.org/">Earth Day Network</a><br />Earth Day Network’s mission is to broaden and diversify the environmental movement worldwide and to mobilize it as the most effective vehicle to build a healthy, sustainable environment, address climate change, and protect the Earth for future generations.</p>
             </div>
             <div class="large-4 medium-4 columns">
               <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
@@ -92,13 +140,29 @@
       </div>
     </div>
 
-    <div class="row">
+    <form id="myForm" action="form_action.asp">
+    	<div class="row">
+            <div class="large-12 columns">
+              <label>Suggest a new challenge!</label>
+              <textarea placeholder="enter your brilliant ideas here"></textarea>
+            </div>
+          </div>
+          <input type="button" onclick="myFunction()" value="Submit form">
+    </form>
+
+    <script>
+function myFunction() {
+    document.getElementById("myForm").submit();
+}
+</script>
+
+<!--    <div class="row">
       <div class="large-8 medium-8 columns">
-        <h5>Here&rsquo;s your basic grid:</h5>
+        <h5>Here&rsquo;s your basic grid:</h5>-->
         <!-- Grid Example -->
 
 
-        <hr />
+        <!--<hr />
 
         <h5>We bet you&rsquo;ll need a form somewhere:</h5>
         <form>
@@ -165,6 +229,7 @@
 
         <a href="#" class="alert button">Alert Btn</a><br/>
         <a href="#" class="secondary button">Secondary Btn</a></p>
+        <a href="#" class="success button">Benefits</a>
         <div class="callout">
           <h5>So many components, girl!</h5>
           <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
@@ -173,9 +238,6 @@
       </div>
     </div>
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
+    
   </body>
-</html>
+</html> -->
