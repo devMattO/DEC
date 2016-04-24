@@ -44,5 +44,9 @@ var challenges = [{
 	benefits: '',
 }];
 
-
+function randomChallenge(things){
+	var chall = {};
+	chall.challenges = getRandomElement(challenges);
+	return chall;
+}
 
